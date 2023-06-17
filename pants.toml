@@ -36,7 +36,7 @@ interpreter_constraints = ["==3.9.*"]
 # `generate-lockfiles` goal for Pants to generate the lockfile for you.
 enable_resolves = true
 
-resolves = { python-default = "python-default.lock"}
+resolves = { python-default = "python-default.lock", flake8 = "flake8.lock"}
 
 [python-bootstrap]
 # We search for interpreters both on the $PATH and in the `$(pyenv root)/versions` folder.
@@ -44,3 +44,7 @@ resolves = { python-default = "python-default.lock"}
 #  problematic system Pythons. See
 #  https://www.pantsbuild.org/docs/python-interpreter-compatibility#changing-the-interpreter-search-path.
 search_path = ["<PATH>", "<PYENV>"]
+
+[flake8]
+extra_files = ["pyproject.toml"]
+install_from_resolve = "flake8"

@@ -5,3 +5,9 @@
 # `python_requirement_library` target. Refer to
 # https://www.pantsbuild.org/docs/python-third-party-dependencies.
 python_requirements(name="reqs")
+
+python_requirements(
+    name="flake8",
+    source="flake8_requirements.txt",
+    resolve="flake8",
+)
